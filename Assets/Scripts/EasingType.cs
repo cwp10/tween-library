@@ -1,6 +1,6 @@
 namespace Tween.Curve
 {
-    public enum CurveType
+    public enum EasingType
     {
         Linear,
 

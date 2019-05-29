@@ -7,143 +7,143 @@ namespace Tween.Curve
     {
         private delegate double Easing(double time, double min, double max, double duration);
 
-        public static AnimationCurve Create(CurveType curveType)
+        public static AnimationCurve Create(EasingType easingType)
         {
             AnimationCurve curve = new AnimationCurve();
 
-            switch (curveType)
+            switch (easingType)
             {
-                case CurveType.Linear:
+                case EasingType.Linear:
                     curve = Calculate(curve, Linear, 2);
                     break;
 
-                case CurveType.QuadEaseOut:
+                case EasingType.QuadEaseOut:
                     curve = Calculate(curve, QuadEaseOut, 15);
                     break;
-                case CurveType.QuadEaseIn:
+                case EasingType.QuadEaseIn:
                     curve = Calculate(curve, QuadEaseIn, 15);
                     break;
-                case CurveType.QuadEaseInOut:
+                case EasingType.QuadEaseInOut:
                     curve = Calculate(curve, QuadEaseInOut, 15);
                     break;
-                case CurveType.QuadEaseOutIn:
+                case EasingType.QuadEaseOutIn:
                     curve = Calculate(curve, QuadEaseOutIn, 15);
                     break;
 
-                case CurveType.ExpoEaseOut:
+                case EasingType.ExpoEaseOut:
                     curve = Calculate(curve, ExpoEaseOut, 15);
                     break;
-                case CurveType.ExpoEaseIn:
+                case EasingType.ExpoEaseIn:
                     curve = Calculate(curve, ExpoEaseIn, 15);
                     break;
-                case CurveType.ExpoEaseInOut:
+                case EasingType.ExpoEaseInOut:
                     curve = Calculate(curve, ExpoEaseInOut, 15);
                     break;
-                case CurveType.ExpoEaseOutIn:
+                case EasingType.ExpoEaseOutIn:
                     curve = Calculate(curve, ExpoEaseOutIn, 15);
                     break;
 
-                case CurveType.CubicEaseOut:
+                case EasingType.CubicEaseOut:
                     curve = Calculate(curve, CubicEaseOut, 15);
                     break;
-                case CurveType.CubicEaseIn:
+                case EasingType.CubicEaseIn:
                     curve = Calculate(curve, CubicEaseIn, 15);
                     break;
-                case CurveType.CubicEaseInOut:
+                case EasingType.CubicEaseInOut:
                     curve = Calculate(curve, CubicEaseInOut, 15);
                     break;
-                case CurveType.CubicEaseOutIn:
+                case EasingType.CubicEaseOutIn:
                     curve = Calculate(curve, CubicEaseOutIn, 15);
                     break;
 
-                case CurveType.QuartEaseOut:
+                case EasingType.QuartEaseOut:
                     curve = Calculate(curve, QuartEaseOut, 15);
                     break;
-                case CurveType.QuartEaseIn:
+                case EasingType.QuartEaseIn:
                     curve = Calculate(curve, QuartEaseIn, 15);
                     break;
-                case CurveType.QuartEaseInOut:
+                case EasingType.QuartEaseInOut:
                     curve = Calculate(curve, QuartEaseInOut, 15);
                     break;
-                case CurveType.QuartEaseOutIn:
+                case EasingType.QuartEaseOutIn:
                     curve = Calculate(curve, QuartEaseOutIn, 15);
                     break;
 
-                case CurveType.QuintEaseOut:
+                case EasingType.QuintEaseOut:
                     curve = Calculate(curve, QuintEaseOut, 15);
                     break;
-                case CurveType.QuintEaseIn:
+                case EasingType.QuintEaseIn:
                     curve = Calculate(curve, QuintEaseIn, 15);
                     break;
-                case CurveType.QuintEaseInOut:
+                case EasingType.QuintEaseInOut:
                     curve = Calculate(curve, QuintEaseInOut, 15);
                     break;
-                case CurveType.QuintEaseOutIn:
+                case EasingType.QuintEaseOutIn:
                     curve = Calculate(curve, QuintEaseOutIn, 15);
                     break;
 
-                case CurveType.CircEaseOut:
+                case EasingType.CircEaseOut:
                     curve = Calculate(curve, CircEaseOut, 15);
                     break;
-                case CurveType.CircEaseIn:
+                case EasingType.CircEaseIn:
                     curve = Calculate(curve, CircEaseIn, 15);
                     break;
-                case CurveType.CircEaseInOut:
+                case EasingType.CircEaseInOut:
                     curve = Calculate(curve, CircEaseInOut, 15);
                     break;
-                case CurveType.CircEaseOutIn:
+                case EasingType.CircEaseOutIn:
                     curve = Calculate(curve, CircEaseOutIn, 15);
                     break;
 
-                case CurveType.SineEaseOut:
+                case EasingType.SineEaseOut:
                     curve = Calculate(curve, SineEaseOut, 15);
                     break;
-                case CurveType.SineEaseIn:
+                case EasingType.SineEaseIn:
                     curve = Calculate(curve, SineEaseIn, 15);
                     break;
-                case CurveType.SineEaseInOut:
+                case EasingType.SineEaseInOut:
                     curve = Calculate(curve, SineEaseInOut, 15);
                     break;
-                case CurveType.SineEaseOutIn:
+                case EasingType.SineEaseOutIn:
                     curve = Calculate(curve, SineEaseOutIn, 15);
                     break;
 
-                case CurveType.ElasticEaseOut:
+                case EasingType.ElasticEaseOut:
                     curve = Calculate(curve, ElasticEaseOut, 30);
                     break;
-                case CurveType.ElasticEaseIn:
+                case EasingType.ElasticEaseIn:
                     curve = Calculate(curve, ElasticEaseIn, 30);
                     break;
-                case CurveType.ElasticEaseInOut:
+                case EasingType.ElasticEaseInOut:
                     curve = Calculate(curve, ElasticEaseInOut, 30);
                     break;
-                case CurveType.ElasticEaseOutIn:
+                case EasingType.ElasticEaseOutIn:
                     curve = Calculate(curve, ElasticEaseOutIn, 30);
                     break;
 
-                case CurveType.BounceEaseOut:
+                case EasingType.BounceEaseOut:
                     curve = Calculate(curve, BounceEaseOut, 30);
                     break;
-                case CurveType.BounceEaseIn:
+                case EasingType.BounceEaseIn:
                     curve = Calculate(curve, BounceEaseIn, 30);
                     break;
-                case CurveType.BounceEaseInOut:
+                case EasingType.BounceEaseInOut:
                     curve = Calculate(curve, BounceEaseInOut, 30);
                     break;
-                case CurveType.BounceEaseOutIn:
+                case EasingType.BounceEaseOutIn:
                     curve = Calculate(curve, BounceEaseOutIn, 30);
                     break;
 
-                case CurveType.BackEaseOut:
+                case EasingType.BackEaseOut:
                     curve = Calculate(curve, BackEaseOut, 30);
                     break;
-                case CurveType.BackEaseIn:
+                case EasingType.BackEaseIn:
                     curve = Calculate(curve, BackEaseIn, 30);
                     break;
-                case CurveType.BackEaseInOut:
+                case EasingType.BackEaseInOut:
                     curve = Calculate(curve, BackEaseInOut, 30);
                     break;
-                case CurveType.BackEaseOutIn:
+                case EasingType.BackEaseOutIn:
                     curve = Calculate(curve, BackEaseOutIn, 30);
                     break;
             }
