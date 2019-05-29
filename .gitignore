@@ -1,0 +1,14 @@
+._*
+.DS_Store
+.vscode/
+
+*.swp
+
+/Logs/
+/Library/
+/Temp/
+/obj/
+
+/*.sln
+/*.csproj
+
