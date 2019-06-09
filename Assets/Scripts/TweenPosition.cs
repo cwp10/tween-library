@@ -1,13 +1,22 @@
 using UnityEngine;
 using System.Collections;
+using Tween.Curve;
 
 namespace Tween
 {
     public class TweenPosition : TweenObject
     {
-        public void MoveTo()
+        public void MoveTo(EasingType easingType, Vector2 startPosition, Vector2 endPosition, float duration, float delay = 0)
         {
-            this.Play();
+            this.Easing = easingType;
+            this.From = startPosition;
+            this.MoveTo(endPosition, duration, delay);
+        }
+
+        public void MoveTo(Vector2 startPosition, Vector2 endPosition, float duration, float delay = 0)
+        {
+            this.From = startPosition;
+            this.MoveTo(endPosition, duration, delay);
         }
 
         public void MoveTo(Vector2 endPosition, float duration, float delay = 0)
@@ -17,16 +26,11 @@ namespace Tween
             this.To = endPosition;
             this.Delay = delay;
 
-            this.Play();
+            this.MoveTo();
         }
 
-        public void MoveTo(Vector2 startPosition, Vector2 endPosition, float duration, float delay = 0)
+        public void MoveTo()
         {
-            this.Duration = duration;
-            this.From = startPosition;
-            this.To = endPosition;
-            this.Delay = delay;
-
             this.Play();
         }
 

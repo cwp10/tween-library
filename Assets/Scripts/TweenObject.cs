@@ -9,7 +9,7 @@ namespace Tween
     {
         [Serializable] public class TweenComplete : UnityEvent { }
         [SerializeField] protected AnimationCurve curve_ = null;
-        [SerializeField] private EasingType _easingType = EasingType.Linear;
+        [SerializeField] protected EasingType _easingType = EasingType.Linear;
         [SerializeField] private Option _option = Option.Once;
         [SerializeField] private float _delay = 0.0f;
         [SerializeField] private float _duration = 1.0f;
