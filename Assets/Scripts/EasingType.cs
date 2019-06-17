@@ -1,57 +1,54 @@
-namespace Tween.Curve
+public enum EasingType
 {
-    public enum EasingType
-    {
-        Linear,
+    Linear,
 
-        ExpoEaseOut,
-        ExpoEaseIn,
-        ExpoEaseInOut,
-        ExpoEaseOutIn,
+    ExpoEaseOut,
+    ExpoEaseIn,
+    ExpoEaseInOut,
+    ExpoEaseOutIn,
 
-        CircEaseOut,
-        CircEaseIn,
-        CircEaseInOut,
-        CircEaseOutIn,
+    CircEaseOut,
+    CircEaseIn,
+    CircEaseInOut,
+    CircEaseOutIn,
 
-        QuadEaseOut,
-        QuadEaseIn,
-        QuadEaseInOut,
-        QuadEaseOutIn,
+    QuadEaseOut,
+    QuadEaseIn,
+    QuadEaseInOut,
+    QuadEaseOutIn,
 
-        SineEaseOut,
-        SineEaseIn,
-        SineEaseInOut,
-        SineEaseOutIn,
+    SineEaseOut,
+    SineEaseIn,
+    SineEaseInOut,
+    SineEaseOutIn,
 
-        CubicEaseOut,
-        CubicEaseIn,
-        CubicEaseInOut,
-        CubicEaseOutIn,
+    CubicEaseOut,
+    CubicEaseIn,
+    CubicEaseInOut,
+    CubicEaseOutIn,
 
-        QuartEaseOut,
-        QuartEaseIn,
-        QuartEaseInOut,
-        QuartEaseOutIn,
+    QuartEaseOut,
+    QuartEaseIn,
+    QuartEaseInOut,
+    QuartEaseOutIn,
 
-        QuintEaseOut,
-        QuintEaseIn,
-        QuintEaseInOut,
-        QuintEaseOutIn,
+    QuintEaseOut,
+    QuintEaseIn,
+    QuintEaseInOut,
+    QuintEaseOutIn,
 
-        ElasticEaseOut,
-        ElasticEaseIn,
-        ElasticEaseInOut,
-        ElasticEaseOutIn,
+    ElasticEaseOut,
+    ElasticEaseIn,
+    ElasticEaseInOut,
+    ElasticEaseOutIn,
 
-        BounceEaseOut,
-        BounceEaseIn,
-        BounceEaseInOut,
-        BounceEaseOutIn,
+    BounceEaseOut,
+    BounceEaseIn,
+    BounceEaseInOut,
+    BounceEaseOutIn,
 
-        BackEaseOut,
-        BackEaseIn,
-        BackEaseInOut,
-        BackEaseOutIn
-    }
+    BackEaseOut,
+    BackEaseIn,
+    BackEaseInOut,
+    BackEaseOutIn
 }
