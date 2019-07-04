@@ -132,23 +132,23 @@ public class Tweener
     private Tween _currentTween = null;
     private IEnumerator _coroutine = null;
 
-    public void Add(MonoBehaviour target, TweenType type, Vector3 to, float duration, Action cb = null, EasingType easyType = EasingType.Linear)
+    public void Play(MonoBehaviour target, TweenType type, Vector3 to, float duration, Action cb = null, EasingType easyType = EasingType.Linear)
     {
-        this.Add(target.transform, type, to, duration, cb, easyType);
+        this.Play(target.transform, type, to, duration, cb, easyType);
     }
 
-    public void Add(GameObject target, TweenType type, Vector3 to, float duration, Action cb = null, EasingType easyType = EasingType.Linear)
+    public void Play(GameObject target, TweenType type, Vector3 to, float duration, Action cb = null, EasingType easyType = EasingType.Linear)
     {
-        this.Add(target.transform, type, to, duration, cb, easyType);
+        this.Play(target.transform, type, to, duration, cb, easyType);
     }
 
-    public void Add(Transform target, TweenType type, Vector3 to, float duration, Action cb = null, EasingType easyType = EasingType.Linear)
+    public void Play(Transform target, TweenType type, Vector3 to, float duration, Action cb = null, EasingType easyType = EasingType.Linear)
     {
         Tween tween = new Tween(target, type, to, duration, cb, easyType);
-        this.Add(tween);
+        this.Play(tween);
     }
 
-    public void Add(Tween tween)
+    public void Play(Tween tween)
     {
         tween.AddListener(OnTweenEnd);
         _tweenQueue.Enqueue(tween);
