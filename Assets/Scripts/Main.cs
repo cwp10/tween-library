@@ -6,16 +6,11 @@ public class Main : MonoBehaviour
 
     void Start()
     {
-        _tweener.Play(this, TweenType.LocalPosition, new Vector3(2, 2, 0), 3, callback: () => {
-            _tweener.Play(this, TweenType.LocalPosition, new Vector3(1, -2, 0), 1, callback: () => {
-                _tweener.Play(this, TweenType.Rotation, new Vector3(0, 180, 0), 3f, callback: OnEnd, easyType: EasingType.QuadEaseIn);
-            }, easyType: EasingType.SineEaseIn, delay: 5.0f);
-        }, easyType: EasingType.BounceEaseOutIn);
-    }
-
-    void OnEnd()
-    {
-        Debug.Log("OnEnd");
+        _tweener.Play(this, TweenType.LocalPosition, new Vector3(2, 3, 0), 1, ()=> {
+            _tweener.Play(this, TweenType.LocalPosition, new Vector3(0, -2, 0), 0.5f, ()=> {
+                Debug.Log("tween end");
+            }, EasingType.QuadEaseIn, 5, 2);
+        }, EasingType.BounceEaseOutIn, 2, 0);
     }
 
     void Update()

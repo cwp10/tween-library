@@ -14,32 +14,32 @@ public enum TweenType
 
 public class Tweener
 {
-    public bool IsPlaying { get; private set; }
-
     private Queue<Tween> _tweenQueue = new Queue<Tween>();
     private bool _isReady = true;
     private Tween _currentTween = null;
     private IEnumerator _coroutine = null;
 
-    public void Play(MonoBehaviour target, TweenType type, Vector3 to, float duration, Action callback = null, EasingType easyType = EasingType.Linear, float delay = 0)
+    public bool IsPlaying { get; private set; }
+
+    public void Play(MonoBehaviour target, TweenType type, Vector3 to, float duration, Action callback = null, EasingType easyType = EasingType.Linear, int loopCount = 0, float delay = 0)
     {
-        this.Play(target.transform, type, to, duration, callback, easyType, delay);
+        this.Play(target.transform, type, to, duration, callback, easyType, loopCount, delay);
     }
 
-    public void Play(GameObject target, TweenType type, Vector3 to, float duration, Action callback = null, EasingType easyType = EasingType.Linear, float delay = 0)
+    public void Play(GameObject target, TweenType type, Vector3 to, float duration, Action callback = null, EasingType easyType = EasingType.Linear, int loopCount = 0, float delay = 0)
     {
-        this.Play(target.transform, type, to, duration, callback, easyType, delay);
+        this.Play(target.transform, type, to, duration, callback, easyType, loopCount, delay);
     }
 
-    public void Play(Transform target, TweenType type, Vector3 to, float duration, Action callback = null, EasingType easyType = EasingType.Linear, float delay = 0)
+    public void Play(Transform target, TweenType type, Vector3 to, float duration, Action callback = null, EasingType easyType = EasingType.Linear, int loopCount = 0, float delay = 0)
     {
-        Tween tween = new Tween(target, type, to, duration, callback, easyType, delay);
+        Tween tween = new Tween(target.transform, type, to, duration, callback, easyType, loopCount, delay);
         this.Play(tween);
     }
 
     public void Play(Tween tween)
     {
-        tween.AddListener(OnTweenEnd);
+        tween.AddListener(OnComplete);
         _tweenQueue.Enqueue(tween);
         this.Next();
     }
@@ -75,9 +75,10 @@ public class Tweener
         }
     }
 
-    private void OnTweenEnd()
+    private void OnComplete()
     {
         _isReady = true;
+        _currentTween = null;
         this.Next();
     }
 }
