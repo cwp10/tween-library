@@ -6,20 +6,23 @@
 using UnityEngine;
 using System.Collections;
 
-public class CoroutineHandler : UnitySingleton<CoroutineHandler>
+namespace Common
 {
-    public static Coroutine StartStaticCoroutine(IEnumerator coroutine)
+    public class CoroutineHandler : UnitySingleton<CoroutineHandler>
     {
-        return Instance.StartCoroutine(coroutine);
-    }
+        public static Coroutine StartStaticCoroutine(IEnumerator coroutine)
+        {
+            return Instance.StartCoroutine(coroutine);
+        }
 
-    public static void StopStaticCoroutine(Coroutine coroutine)
-    {
-        Instance.StopCoroutine(coroutine);
-    }
+        public static void StopStaticCoroutine(Coroutine coroutine)
+        {
+            Instance.StopCoroutine(coroutine);
+        }
 
-    public static void StopStaticCoroutine(IEnumerator coroutine)
-    {
-        Instance.StopCoroutine(coroutine);
+        public static void StopStaticCoroutine(IEnumerator coroutine)
+        {
+            Instance.StopCoroutine(coroutine);
+        }
     }
 }
