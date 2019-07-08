@@ -1,14 +1,14 @@
 ﻿using UnityEngine;
 using Common.Tween;
 
-public class Main : MonoBehaviour
+public class TweenDemo : MonoBehaviour
 {
     private Tweener _tweener = new Tweener();
 
     void Start()
     {
-        _tweener.Play(this, TweenType.LocalPosition, new Vector3(2, 3, 0), 1, ()=> {
-            _tweener.Play(this, TweenType.LocalPosition, new Vector3(0, -2, 0), 0.5f, ()=> {
+        _tweener.Play(this, TransformType.LocalPosition, new Vector3(2, 3, 0), 1, ()=> {
+            _tweener.Play(this, TransformType.LocalPosition, new Vector3(0, -2, 0), 0.5f, ()=> {
                 Debug.Log("tween end");
             }, EasingType.QuadEaseIn, 5, 2);
         }, EasingType.BounceEaseOutIn, 2, 0);
