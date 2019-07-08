@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Common.Tween
 {
-    public enum TweenType
+    public enum TransformType
     {
         Position = 0,
         LocalPosition,
@@ -23,17 +23,17 @@ namespace Common.Tween
 
         public bool IsPlaying { get; private set; }
 
-        public void Play(MonoBehaviour target, TweenType type, Vector3 to, float duration, Action callback = null, EasingType easyType = EasingType.Linear, int loopCount = 0, float delay = 0)
+        public void Play(MonoBehaviour target, TransformType type, Vector3 to, float duration, Action callback = null, EasingType easyType = EasingType.Linear, int loopCount = 0, float delay = 0)
         {
             this.Play(target.transform, type, to, duration, callback, easyType, loopCount, delay);
         }
 
-        public void Play(GameObject target, TweenType type, Vector3 to, float duration, Action callback = null, EasingType easyType = EasingType.Linear, int loopCount = 0, float delay = 0)
+        public void Play(GameObject target, TransformType type, Vector3 to, float duration, Action callback = null, EasingType easyType = EasingType.Linear, int loopCount = 0, float delay = 0)
         {
             this.Play(target.transform, type, to, duration, callback, easyType, loopCount, delay);
         }
 
-        public void Play(Transform target, TweenType type, Vector3 to, float duration, Action callback = null, EasingType easyType = EasingType.Linear, int loopCount = 0, float delay = 0)
+        public void Play(Transform target, TransformType type, Vector3 to, float duration, Action callback = null, EasingType easyType = EasingType.Linear, int loopCount = 0, float delay = 0)
         {
             Tween tween = new Tween(target.transform, type, to, duration, callback, easyType, loopCount, delay);
             this.Play(tween);

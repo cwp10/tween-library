@@ -16,7 +16,7 @@ namespace Common.Component
         [SerializeField] private int loopCount_ = 0;
         [SerializeField] private float delay_ = 0.0f;
         [SerializeField] private bool isAuto = false;
-        [SerializeField] private TweenType tweenType_ = TweenType.LocalPosition;
+        [SerializeField] private TransformType tweenType_ = TransformType.LocalPosition;
         [SerializeField] private EasingType easingType_ = EasingType.Linear;
         [SerializeField] private Callback onComplete_ = null;
 
@@ -57,7 +57,7 @@ namespace Common.Component
             this.loopCount_ = count;
         }
 
-        public void SetTweenType(TweenType tweenType)
+        public void SetTweenType(TransformType tweenType)
         {
             this.tweenType_ = tweenType;
         }
@@ -105,19 +105,19 @@ namespace Common.Component
         {
             switch (tweenType_)
             {
-                case TweenType.LocalPosition:
+                case TransformType.LocalPosition:
                     transform.localPosition = from_;
                     break;
-                case TweenType.Position:
+                case TransformType.Position:
                     transform.position = from_;
                     break;
-                case TweenType.Scale:
+                case TransformType.Scale:
                     transform.localScale = from_;
                     break;
-                case TweenType.Rotation:
+                case TransformType.Rotation:
                     transform.rotation = Quaternion.Euler(from_);
                     break;
-                case TweenType.LocalRotation:
+                case TransformType.LocalRotation:
                     transform.localRotation = Quaternion.Euler(from_);
                     break;
             }

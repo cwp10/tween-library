@@ -7,7 +7,7 @@ namespace Common.Tween
     public class Tween
     {
         private Transform _target = null;
-        private TweenType _type = TweenType.LocalPosition;
+        private TransformType _type = TransformType.LocalPosition;
         private Vector3 _from = Vector3.zero;
         private Vector3 _to = Vector3.zero;
         private Action _callback = null;
@@ -17,7 +17,7 @@ namespace Common.Tween
         private int _loopCount = 0;
         private bool _isPlaying = false;
 
-        public Tween(Transform target, TweenType type, Vector3 to, float duration, Action callback = null, EasingType easyType = EasingType.Linear, int loop = 0, float delay = 0)
+        public Tween(Transform target, TransformType type, Vector3 to, float duration, Action callback = null, EasingType easyType = EasingType.Linear, int loop = 0, float delay = 0)
         {
             this._target = target;
             this._type = type;
@@ -112,19 +112,19 @@ namespace Common.Tween
 
             switch (_type)
             {
-                case TweenType.LocalPosition:
+                case TransformType.LocalPosition:
                     from = _target.transform.localPosition;
                     break;
-                case TweenType.Position:
+                case TransformType.Position:
                     from = _target.transform.position;
                     break;
-                case TweenType.Scale:
+                case TransformType.Scale:
                     from = _target.transform.localScale;
                     break;
-                case TweenType.Rotation:
+                case TransformType.Rotation:
                     from = _target.transform.rotation.eulerAngles;
                     break;
-                case TweenType.LocalRotation:
+                case TransformType.LocalRotation:
                     from = _target.transform.localRotation.eulerAngles;
                     break;
             }
@@ -135,19 +135,19 @@ namespace Common.Tween
         {
             switch (_type)
             {
-                case TweenType.LocalPosition:
+                case TransformType.LocalPosition:
                     _target.transform.localPosition = Vector3.Lerp(a, b, t);
                     break;
-                case TweenType.Position:
+                case TransformType.Position:
                     _target.transform.position = Vector3.Lerp(a, b, t);
                     break;
-                case TweenType.Scale:
+                case TransformType.Scale:
                     _target.transform.localScale = Vector3.Lerp(a, b, t);
                     break;
-                case TweenType.Rotation:
+                case TransformType.Rotation:
                     _target.transform.rotation = Quaternion.Euler(Vector3.Lerp(a, b, t));
                     break;
-                case TweenType.LocalRotation:
+                case TransformType.LocalRotation:
                     _target.transform.localRotation = Quaternion.Euler(Vector3.Lerp(a, b, t));
                     break;
             }
