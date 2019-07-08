@@ -16,6 +16,7 @@ namespace Common.Tween
         private float _delay = 0.0f;
         private int _loopCount = 0;
         private bool _isPlaying = false;
+        private WaitForEndOfFrame _waitForEndOfFrame = new WaitForEndOfFrame();
 
         public Tween(Transform target, TransformType type, Vector3 to, float duration, Action callback = null, EasingType easyType = EasingType.Linear, int loop = 0, float delay = 0)
         {
@@ -61,7 +62,7 @@ namespace Common.Tween
             while (delayTimer <= _delay)
             {
                 if (_isPlaying) delayTimer += Time.deltaTime;
-                yield return null;
+                yield return _waitForEndOfFrame;
             }
 
             do
@@ -77,10 +78,10 @@ namespace Common.Tween
                         this.Swap(ref _from, ref _to);
                         playTimer = 0;
                     }
-                    else if (_loopCount == 0) yield return null;
+                    else if (_loopCount == 0) yield return _waitForEndOfFrame;
                     else
                     {
-                        if (count >= _loopCount) yield return null;
+                        if (count >= _loopCount) yield return _waitForEndOfFrame;
                         else
                         {
                             this.Swap(ref _from, ref _to);
@@ -89,7 +90,7 @@ namespace Common.Tween
                         }
                     }
                 }
-                else yield return null;
+                else yield return _waitForEndOfFrame;
             } while (playTimer <= _duration);
 
             Lerp(_to, _to, 0);
