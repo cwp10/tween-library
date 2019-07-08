@@ -1,5 +1,14 @@
 namespace Common.Tween
 {
+    public enum TransformType
+    {
+        Position = 0,
+        LocalPosition,
+        Rotation,
+        LocalRotation,
+        Scale,
+    }
+    
     public enum EasingType
     {
         Linear,

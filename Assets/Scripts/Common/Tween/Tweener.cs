@@ -5,15 +5,6 @@ using UnityEngine;
 
 namespace Common.Tween
 {
-    public enum TransformType
-    {
-        Position = 0,
-        LocalPosition,
-        Rotation,
-        LocalRotation,
-        Scale,
-    }
-
     public class Tweener
     {
         private Queue<Tween> _tweenQueue = new Queue<Tween>();
